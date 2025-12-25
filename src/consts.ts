@@ -89,7 +89,7 @@ export const projects: Project[] = [
     title: "Brief",
     techs: ["Python", "Gtk", "Linux", "Flatpak"],
     description:
-      "Brief is a GTK4 application for browsing tldr-pages (community-maintained command line help pages). ",
+      "Brief is a GTK4 application for browsing community-maintained command line help pages. It uses tldr-pages as the data source.",
     sourceHref: "https://github.com/shonebinu/brief",
     liveHref: "https://flathub.org/en/apps/io.github.shonebinu.Brief",
   },
