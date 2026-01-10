@@ -4,7 +4,7 @@ import type { About, Footer, Header, Project } from "./types.ts";
 
 import ProfilePic from "./assets/profile-pic.jpg";
 
-export const SITE_URL: string = "https://ezzylan.netlify.app";
+export const SITE_URL: string = "https://ezlanzulfiqree.netlify.app";
 
 export const ENABLE_STARDUST_BG: boolean = true;
 
