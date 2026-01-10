@@ -8,7 +8,7 @@
 
 @layer components {
   .fancy-highlight {
-    @apply rounded-md bg-[var(--color-base-300)]/30 underline decoration-[var(--color-accent)] decoration-2 underline-offset-4 backdrop-blur-2xl;
+    @apply rounded-md bg-(--color-base-300)/30 underline decoration-(--color-accent) decoration-2 underline-offset-4 backdrop-blur-2xl;
   }
 
   .primary-badge {
@@ -16,7 +16,7 @@
   }
 
   .primary-underline {
-    @apply underline decoration-[var(--color-primary)] decoration-2 underline-offset-4;
+    @apply underline decoration-(--color-primary) decoration-2 underline-offset-4;
   }
 }
 

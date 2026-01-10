@@ -1,5 +1,5 @@
-import type { ImageMetadata } from "astro";
 import type { icons } from "@lucide/astro";
+import type { ImageMetadata } from "astro";
 
 export interface Header {
   logoTitle: string;
@@ -18,14 +18,14 @@ interface WorkExperience {
   title: string;
   timeline: string;
   company: string;
-  description: string;
+  description?: string[];
 }
 
 interface Education {
   title: string;
   timeline: string;
   institution: string;
-  description: string;
+  description: string[];
 }
 
 export interface About {
@@ -41,7 +41,7 @@ export interface About {
 }
 
 export interface Project {
-  logoImage: ImageMetadata;
+  logoImage?: ImageMetadata;
   title: string;
   techs: string[];
   description: string;

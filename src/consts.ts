@@ -1,142 +1,184 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
-import type { Header, Footer, About, Project } from "./types.ts";
+import type { About, Footer, Header, Project } from "./types.ts";
 
 import ProfilePic from "./assets/profile-pic.jpg";
 
-import PenweaveImage from "./assets/projects/penweave.png";
-import MGUScraperImage from "./assets/projects/mguscraper.png";
-import FlashifyImage from "./assets/projects/flashify.png";
-import WeatherifyImage from "./assets/projects/weatherify.png";
-import BriefImage from "./assets/projects/brief.svg";
-import PlaceholderImage from "./assets/projects/placeholder.svg";
+export const SITE_URL: string = "https://ezzylan.netlify.app";
 
-export const SITE_URL: string = "https://shonebinu.com";
-
-export const ENABLE_STARDUST_BG: boolean = false;
+export const ENABLE_STARDUST_BG: boolean = true;
 
 export const meta = {
   about: {
     // index page
-    title: "Shone Binu",
+    title: "Ezlan Zulfiqree",
     description:
-      "Hi, I'm Shone Binu, a software engineer. Welcome to my little corner of the internet!",
+      "Hi, I'm Ezlan Zulfiqree, a software engineer. Welcome to my little corner of the internet!",
   },
   projects: {
-    title: "Projects | Shone Binu",
+    title: "Projects | Ezlan Zulfiqree",
     description:
-      "Here are some of my projects — things I’ve built, experimented with, and had fun creating.",
+      "Here are some of my projects — things I've built, experimented with, and had fun creating.",
   },
   blog: {
-    title: "Blog | Shone Binu",
+    title: "Blog | Ezlan Zulfiqree",
     description:
-      "This is my blog — a place where I share thoughts, ideas, and things I’m learning along the way.",
+      "This is my blog — a place where I share thoughts, ideas, and things I'm learning along the way.",
   },
   // blog post title and description are taken from the variables in markdown file
 };
 
-export const header: Header = { logoTitle: "SB" };
+export const header: Header = { logoTitle: "EZ" };
 
 export const footer: Footer = {
   // parses html
   content:
-    "Made with ❤️ by Shone Binu • <a href='https://github.com/shonebinu/portfolio' class='link'>Source Code</a>",
+    "Made with ❤️ by Ezlan Zulfiqree • <a href='https://github.com/ezzylan/portfolio' class='link'>Source Code</a>",
 };
 
 export const about: About = {
   // parses html
   headLine:
-    "Hi, I'm <span class='fancy-highlight font-black'>Shone Binu</span>",
+    "Hi, I'm <span class='fancy-highlight font-black'>Ezlan Zulfiqree</span>",
   tagLine: "Software Engineer / Full Stack Developer",
   profilePic: ProfilePic,
   // parses html
   description:
-    "I’m a recent <u>Software Engineer</u> graduate from India 🇮🇳 who likes to keep tackling new problems. Currently, I’m working on the <u>React and Node.js</u> side of things. Outside of this, I work on improving myself in whatever I see fit.",
+    "I'm a <u>Software Engineer</u> graduate from Malaysia 🇲🇾 who likes to keep tackling new problems. Currently, I'm working on the <u>Vue.js and Laravel</u> side of things. Outside of this, I like to work on improving my photography skills.",
   links: [
     // Lucide icons
-    { icon: "Github", href: "https://github.com/shonebinu/" },
-    { icon: "Linkedin", href: "https://www.linkedin.com/in/shonebinu/" },
-    { icon: "Youtube", href: "https://www.youtube.com/@shone_binu" },
+    { icon: "Github", href: "https://github.com/ezzylan/" },
+    { icon: "Linkedin", href: "https://www.linkedin.com/in/ezlan-zulfiqree/" },
+    { icon: "Instagram", href: "https://www.instagram.com/ezzy.snaps/" },
   ],
   resumeHref:
-    "https://drive.google.com/file/d/10dfGCIiX2b7Wf-Lj51ypt3UHgPiPQ3ZV/view?usp=sharing",
+    "https://drive.google.com/file/d/1WK7RFa_s700-dwSo3HUGL4Z9Y9Ho9Dfb/view?usp=sharing",
   workExperience: [
     {
-      title: "Full Stack Developer Intern",
-      timeline: "May 2024 - Oct 2024",
-      company: "Rabbitsquare • India",
-      description:
-        "Developed a LAMP stack web solution for a Civil Service academy, including a customizable public website, management portal, user portal, and exam result publishing system.",
+      title: "Full Stack Developer",
+      timeline: "Jan 2025 - Present",
+      company: "Mercedes-Benz Malaysia",
+      description: [
+        "Worked on the Vehicle Accident Management System (VAMS) project using Vue.js on the front-end to streamline accident reporting and processing for Mercedes-Benz vehicles.",
+      ],
+    },
+    {
+      title: "Technology Analyst",
+      timeline: "Nov 2024 - Dec 2024",
+      company: "Deloitte Consulting • Malaysia",
+    },
+    {
+      title: "PASUM IT Tutor",
+      timeline: "Aug 2024 - Nov 2024",
+      company: "University of Malaya • Malaysia",
+      description: [
+        "Tutored four classes for the Information Technology (FAX1002) subject.",
+        "Taught Microsoft Word, PowerPoint and Excel.",
+      ],
+    },
+    {
+      title: "Self Service Printing Shop and Stationary Manager",
+      timeline: "Nov 2023 - Mar 2024",
+      company: "ZassPrint • Malaysia",
+      description: [
+        "Developed a user-friendly website for customer file uploads and thesis orders using Nuxt to reduce customer processing time during working hours.",
+        "Actively participated as a tester for ZassApp to enhance the overall mobile app experience for customers.",
+      ],
+    },
+    {
+      title: "Engineering Intern",
+      timeline: "Jul 2021 - Jan 2022",
+      company: "Digi-X • Malaysia",
+      description: [
+        "Worked on the altHR web application using Vue.js on the front-end to streamline HR processes.",
+      ],
     },
   ],
   education: [
     {
-      title: "Bachelor of Computer Application",
-      timeline: "Jun 2022 - Apr 2025",
-      institution: "Nirmala College Muvattupuzha • India",
-      description:
-        "Studied core computer science fundamentals including programming languages, data structures, algorithms, operating systems, and networking, with practical experience in Java, C/C++, JavaScript, PHP, and Linux.",
+      title: "Master of Software Engineering (Software Technology)",
+      timeline: "Mar 2023 - Apr 2025",
+      institution: "University of Malaya • Malaysia",
+      description: [
+        "Obtained a cumulative grade point average (CGPA) of 4.00",
+        'Wrote a dissertation on "Graph-Based Energy Data Model for Energy Monitoring Systems in Residential Buildings"',
+      ],
+    },
+    {
+      title: "Bachelor of Computer Science (Software Engineering)",
+      timeline: "Sep 2019 - Feb 2023",
+      institution: "University of Malaya • Malaysia",
+      description: [
+        "Studied core computer science fundamentals including programming languages, data structures, algorithms, operating systems, and networking, with practical experience in Java, Python, JavaScript, PHP, and MySQL.",
+        "Obtained a cumulative grade point average (CGPA) of 3.90",
+        "Recipient of Dean's List Award 4 times",
+        "Recipient of Yayasan Bank Rakyat (YBR)'s Pembiayaan Pendidikan Boleh Ubah (PPBU)",
+        "Developed a Restaurant Online Ordering and Management System using Laravel as my Final Year Project",
+      ],
+    },
+    {
+      title: "Foundation in Physical Sciences",
+      timeline: "Sep 2018 - Apr 2019",
+      institution: "University of Malaya • Malaysia",
+      description: ["Obtained a cumulative grade point average (CGPA) of 3.97"],
     },
   ],
   // parses html
   getInTouch:
-    "Drop me an email at <a href='mailto:mail@shonebinu.com' class='primary-underline'>mail@shonebinu.com</a> or connect with me on one of my socials.",
+    "Drop me an email at <a href='mailto:ezlan.hashim53@gmail.com' class='primary-underline'>ezlan.hashim53@gmail.com</a> or connect with me on one of my socials.",
 };
 
 export const projects: Project[] = [
   {
-    logoImage: BriefImage,
-    title: "Brief",
-    techs: ["Python", "Gtk", "Linux", "Flatpak"],
-    description:
-      "Brief is a GTK4 application for browsing community-maintained command line help pages. It uses tldr-pages as the data source.",
-    sourceHref: "https://github.com/shonebinu/brief",
-    liveHref: "https://flathub.org/en/apps/io.github.shonebinu.Brief",
+    title: "PrayEZ",
+    techs: ["Nuxt", "SQLite", "Tailwind CSS"],
+    description: "A simple web-based Islamic prayer tracker built with Nuxt.",
+    sourceHref: "https://github.com/ezzylan/prayer-tracker",
+    liveHref: "https://prayez.netlify.app/",
   },
   {
-    logoImage: PlaceholderImage,
-    title: "Zed React Snippets",
-    techs: ["Javascript"],
+    title: "Pick A Strip",
+    techs: ["React", "Tailwind CSS"],
     description:
-      "Zed extension with converted React/Redux/React-Native snippets from the popular 'ES7+ React/Redux/React-Native snippets' VSCode extension. ",
-    sourceHref: "https://github.com/shonebinu/zed-react-snippets",
-    liveHref: "https://zed.dev/extensions/react-snippets-es7",
+      "A simple way to let friends pick a random strip and make spontaneous decisions, built as a React SPA.",
+    sourceHref: "https://github.com/ezzylan/pick-a-strip",
+    liveHref: "https://pickastrip.netlify.app/",
   },
   {
-    logoImage: PenweaveImage,
-    title: "Penweave",
-    techs: ["React", "Supabase", "daisyUI"],
+    title: "ZassPrint Thesis Order",
+    techs: ["Nuxt", "PostgreSQL", "Tailwind CSS"],
     description:
-      "Penweave is a CodePen‑like tool that lets users run their HTML/CSS/JS in a browser environment with secure preview and sharing.",
-    sourceHref: "https://github.com/shonebinu/penweave/",
-    liveHref: "https://penweave.pages.dev",
+      "A Nuxt app for ZassPrint to keep track of customer thesis hard/soft bound orders.",
+    sourceHref: "https://github.com/ezzylan/zassprint-thesis-order",
+    liveHref: "https://zassprint-thesis-order.netlify.app/",
   },
   {
-    logoImage: MGUScraperImage,
-    title: "MGU Scraper",
-    techs: ["Python", "Streamlit", "Beautiful Soup"],
+    title: "GrantHub",
+    techs: ["Nuxt", "SQLite", "Tailwind CSS"],
     description:
-      "MGU Scraper is a tool designed to simplify the extraction and analysis of bulk student exam results from MGU Kottayam University.",
-    sourceHref: "https://github.com/shonebinu/MGUScraper",
-    liveHref: "https://mguscraper.streamlit.app/",
+      "A Nuxt app that serves as a one-stop center for accessing grant information in Malaysia and facilitates multi-sector collaboration by enabling users from academia, industry, and the community to find and connect with potential partners for research and innovation projects.",
+    sourceHref: "https://github.com/ezzylan/grant-hub",
   },
   {
-    logoImage: FlashifyImage,
-    title: "Flashify",
-    techs: ["PHP", "MySQL", "LAMP"],
+    title: "ZassPrint KPS",
+    techs: ["SvelteKit", "Supabase", "Tailwind CSS"],
     description:
-      "Flashify is a minimal, beautiful, and responsive web-based flashcard application built using the LAMP stack.",
-    sourceHref: "https://github.com/shonebinu/flashify",
-    liveHref: "https://flashify.shonebinu.com/",
+      "A SvelteKit app for ZassPrint to handle customer file uploads to their shop in KPS UM, and keep track of customer thesis hard/softbound orders.",
+    sourceHref: "https://github.com/ezzylan/zassprint-kps",
   },
   {
-    logoImage: WeatherifyImage,
-    title: "Weatherify",
-    techs: ["Javascript", "Webpack"],
+    title: "MadaniBlog",
+    techs: ["Django", "Bootstrap"],
     description:
-      "Weather app featuring glassmorphism design, powered by weatherapi.com.",
-    sourceHref: "https://github.com/shonebinu/weatherify",
-    liveHref: "https://shonebinu.github.io/weatherify/",
+      "A political analysis blog, built with Django, aiming to help Malaysian netizens keep up to date with current politics without being exposed to biased news.",
+    sourceHref: "https://github.com/ezzylan/MadaniBlog",
+  },
+  {
+    title: "Restaurant Online Ordering and Management System",
+    techs: ["Laravel", "Bootstrap", "MySQL"],
+    description:
+      "A Laravel app, developed as a Final Year Project for my Bachelor's Degree, to solve the problems of the manual ordering system by transforming the manual process of ordering system in a restaurant between the customer and staff and modernising and automating all processes.",
+    sourceHref: "https://github.com/AfiqAmmar/Restaurant-Online-Order",
   },
 ];
 

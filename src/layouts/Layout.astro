@@ -3,27 +3,37 @@ import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import { meta, ENABLE_STARDUST_BG } from "../consts";
+
+interface Props {
+	title?: string;
+	description?: string;
+	image?: ImageMetadata;
+}
+
 const {
-  title = meta.about.title,
-  description = meta.about.description,
-  image,
+	title = meta.about.title,
+	description = meta.about.description,
+	image,
 } = Astro.props;
 ---
 
 <html lang="en">
-  <head>
-    <BaseHead title={title} description={description} image={image} />
-  </head>
+	<head>
+		<BaseHead {title} {description} {image} />
+	</head>
 
-  <body
-    class={`flex min-h-svh flex-col ${ENABLE_STARDUST_BG && "bg-[url(/stardust.png)]"}`}
-  >
-    <div class="flex-1">
-      <Header />
-      <main class="mx-auto mt-6 max-w-2xl px-4">
-        <slot />
-      </main>
-    </div>
-    <Footer />
-  </body>
+	<body
+		class:list={[
+			"flex min-h-svh flex-col",
+			{ "bg-[url(/stardust.png)]": ENABLE_STARDUST_BG },
+		]}
+	>
+		<div class="flex-1">
+			<Header />
+			<main class="mx-auto mt-6 max-w-2xl px-4">
+				<slot />
+			</main>
+		</div>
+		<Footer />
+	</body>
 </html>

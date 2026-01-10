@@ -1,0 +1,54 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { meta, about } from "../consts.ts";
+---
+
+<Layout title={meta.about.title} description={meta.about.description}>
+	<section>
+		<h2>
+			<span class="fancy-highlight">Work Experience</span>
+		</h2>
+		<div class="mt-2 flex flex-col gap-6">
+			{
+				about.workExperience.map((exp) => (
+					<div>
+						<h3>{exp.title}</h3>
+						<p>{exp.company}</p>
+						<div class="primary-badge mt-2 mb-4">
+							{exp.timeline}
+						</div>
+						<ul class="ms-5 list-disc">
+							{exp.description?.map((point) => (
+								<li class="text-base-content/80">{point}</li>
+							))}
+						</ul>
+					</div>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="mt-10">
+		<h2>
+			<span class="fancy-highlight">Education</span>
+		</h2>
+		<div class="mt-2 flex flex-col gap-6">
+			{
+				about.education.map((edu) => (
+					<div>
+						<h3>{edu.title}</h3>
+						<p>{edu.institution}</p>
+						<div class="primary-badge mt-2 mb-4">
+							{edu.timeline}
+						</div>
+						<ul class="ms-5 list-disc">
+							{edu.description.map((point) => (
+								<li class="text-base-content/80">{point}</li>
+							))}
+						</ul>
+					</div>
+				))
+			}
+		</div>
+	</section>
+</Layout>

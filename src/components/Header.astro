@@ -1,11 +1,11 @@
 ---
-import ThemeSwitch from "./ThemeSwitch.astro";
-import { header } from "../consts.ts";
+import { about, header } from "../consts.ts";
+import LucideIcon from "./LucideIcon.astro";
 
 const navItems = [
-  { href: "/", label: "About" },
-  { href: "/projects", label: "Projects" },
-  { href: "/blog", label: "Blog" },
+	{ href: "/", label: "Home" },
+	{ href: "/resume", label: "Resume" },
+	{ href: "/projects", label: "Projects" },
 ];
 
 const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
@@ -13,27 +13,43 @@ const subpath = pathname.match(/[^\/]+/g);
 ---
 
 <header
-  class="bg-base-300/30 sticky top-0 z-10 flex items-center justify-between p-4 backdrop-blur-md"
+	class="bg-base-300/30 sticky top-0 z-10 flex justify-center p-4 backdrop-blur-md"
 >
-  <h2><a href="/">{header.logoTitle}</a></h2>
+	<div class="container flex items-center justify-between">
+		<h2 class="hidden sm:block"><a href="/">{header.logoTitle}</a></h2>
 
-  <nav class="flex gap-4">
-    {
-      navItems.map((item) => {
-        const isActive =
-          item.href === pathname || item.href === "/" + (subpath?.[0] || "");
+		<nav class="flex gap-4">
+			{
+				navItems.map((item) => {
+					const isActive =
+						item.href === pathname ||
+						item.href === "/" + (subpath?.[0] || "");
 
-        return (
-          <a
-            href={item.href}
-            class={`link font-medium ${isActive ? "link-primary" : ""}`}
-          >
-            {item.label}
-          </a>
-        );
-      })
-    }
-  </nav>
+					return (
+						<a
+							href={item.href}
+							class={`link font-medium ${isActive ? "link-primary" : ""}`}
+						>
+							{item.label}
+						</a>
+					);
+				})
+			}
+		</nav>
 
-  <ThemeSwitch />
+		<div class="flex gap-2">
+			{
+				about.links.map((link) => (
+					<a
+						href={link.href}
+						target="_blank"
+						class="btn btn-soft btn-circle btn-accent"
+						title={link.icon}
+					>
+						<LucideIcon name={link.icon} />
+					</a>
+				))
+			}
+		</div>
+	</div>
 </header>
