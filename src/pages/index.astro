@@ -2,17 +2,20 @@
 import { SquareArrowOutUpRight } from "@lucide/astro";
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
-import { meta, about } from "../consts.ts";
+import { meta, about, services } from "../consts.ts";
+import LucideIcon from "../components/LucideIcon.astro";
 ---
 
 <Layout title={meta.about.title} description={meta.about.description}>
 	<section class="space-y-4">
-		<div class="flex items-center justify-between">
-			<div>
+		<div
+			class="flex flex-col items-center justify-between gap-4 sm:flex-row"
+		>
+			<div class="text-center sm:text-left">
 				<h1 set:html={about.headLine} />
 				<p>{about.tagLine}</p>
 				<a
-					class="btn btn-primary mt-2"
+					class="hidden mt-2 btn btn-primary sm:inline-flex"
 					href={about.resumeHref}
 					target="_blank"
 					>Open Resume<SquareArrowOutUpRight size="1rem" />
@@ -26,12 +29,55 @@ import { meta, about } from "../consts.ts";
 			/>
 		</div>
 		<p set:html={about.description} class="text-base-content/80" />
+		<a
+			class="w-full mt-2 btn btn-primary sm:hidden"
+			href={about.resumeHref}
+			target="_blank"
+			>Open Resume<SquareArrowOutUpRight size="1rem" />
+		</a>
+	</section>
+
+	<section class="mt-10 space-y-2">
+		<h2>
+			<span class="fancy-highlight">My Services</span>
+		</h2>
+		<p class="text-base-content/80">
+			Here are the services I offer to help businesses, brands, and
+			agencies build a strong online presence — with clean design,
+			performance, and strategic results:
+		</p>
+		<ul class="space-y-2 list-disc list-inside sm:columns-2">
+			{services.map((service) => <li>{service.title}</li>)}
+		</ul>
+		<a class="w-full mt-2 btn btn-primary" href="/services"
+			>Read More<SquareArrowOutUpRight size="1rem" />
+		</a>
 	</section>
 
 	<section class="mt-10 space-y-2">
 		<h2>
 			<span class="fancy-highlight">Get In Touch</span>
 		</h2>
-		<p set:html={about.getInTouch} class="text-base-content/80" />
+		<p class="text-base-content/80">
+			Drop me an email at <a
+				href=`mailto:${about.contact.email}`
+				class="primary-underline">{about.contact.email}</a
+			> or connect with me on one of my socials.
+		</p>
+		<div class="flex gap-2 sm:hidden">
+			{
+				about.links.map((link) => (
+					<a
+						href={link.href}
+						target="_blank"
+						class="btn btn-soft btn-circle btn-accent"
+						title={link.icon}
+						aria-label={link.icon}
+					>
+						<LucideIcon name={link.icon} />
+					</a>
+				))
+			}
+		</div>
 	</section>
 </Layout>

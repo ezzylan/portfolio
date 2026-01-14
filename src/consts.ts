@@ -1,6 +1,13 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
-import type { About, Footer, Header, Project } from "./types.ts";
+import type {
+  About,
+  Footer,
+  Header,
+  Pricing,
+  Project,
+  Service,
+} from "./types.ts";
 
 import ProfilePic from "./assets/profile-pic.jpg";
 
@@ -14,6 +21,16 @@ export const meta = {
     title: "Ezlan Zulfiqree",
     description:
       "Hi, I'm Ezlan Zulfiqree, a software engineer. Welcome to my little corner of the internet!",
+  },
+  services: {
+    title: "Services | Ezlan Zulfiqree",
+    description:
+      "Here are some of the services I offer — things I can help you with.",
+  },
+  resume: {
+    title: "Resume | Ezlan Zulfiqree",
+    description:
+      "This is my resume — a collection of my work experience, education, and skills.",
   },
   projects: {
     title: "Projects | Ezlan Zulfiqree",
@@ -33,13 +50,13 @@ export const header: Header = { logoTitle: "EZ" };
 export const footer: Footer = {
   // parses html
   content:
-    "Made with ❤️ by Ezlan Zulfiqree • <a href='https://github.com/ezzylan/portfolio' class='link'>Source Code</a>",
+    "Made with ❤️ by Ezlan Zulfiqree • <a href='https://github.com/ezzylan/portfolio' class='link' target='_blank'>Source Code</a>",
 };
 
 export const about: About = {
   // parses html
   headLine:
-    "Hi, I'm <span class='fancy-highlight font-black'>Ezlan Zulfiqree</span>",
+    "Hi, I'm <span class='fancy-highlight font-black'>Ezlan Zulfiqree</span>!",
   tagLine: "Software Engineer / Full Stack Developer",
   profilePic: ProfilePic,
   // parses html
@@ -123,10 +140,73 @@ export const about: About = {
       description: ["Obtained a cumulative grade point average (CGPA) of 3.97"],
     },
   ],
-  // parses html
-  getInTouch:
-    "Drop me an email at <a href='mailto:ezlan.hashim53@gmail.com' class='primary-underline'>ezlan.hashim53@gmail.com</a> or connect with me on one of my socials.",
+  contact: {
+    phone: "60122861700",
+    email: "ezlan.hashim53@gmail.com",
+  },
 };
+
+export const services: Service[] = [
+  {
+    title: "Website Development",
+    description:
+      "I build modern, elegant, and high-performing websites designed to elevate your brand image and deliver a seamless user experience.",
+  },
+  {
+    title: "Business Website",
+    description:
+      "Clean and professional websites tailored for small businesses to increase trust, credibility, and online presence.",
+  },
+  {
+    title: "Corporate Website",
+    description:
+      "Comprehensive websites for companies with structured layouts, scalable pages, and consistent brand identity.",
+  },
+  {
+    title: "Landing Page / Sales Page",
+    description:
+      "Conversion-focused pages crafted for marketing campaigns, lead generation, and high performance.",
+  },
+  {
+    title: "Web Systems",
+    description:
+      "Custom dashboards, booking systems, user portals, LMS, and digital solutions built to improve operations.",
+  },
+  {
+    title: "Website Revamp",
+    description:
+      "I can revamp any type of website with cleaner design, improved structure, faster loading speed, and a more modern, professional look.",
+  },
+];
+
+export const pricings: Pricing[] = [
+  {
+    title: "Landing Page / 1-Page Website",
+    amount: "RM1500 - RM1700",
+    features: [
+      "1-page premium landing design",
+      "1 year domain & hosting",
+      "1 year technical maintenance",
+      "Professional copywriting",
+      "Mobile & speed optimized",
+    ],
+    contactHref: `https://api.whatsapp.com/send/?phone=${about.contact.phone}&text=Hi%20Ezlan,%20I%20want%20to%20build%20a%20Landing%20Page`,
+  },
+  {
+    title: "Business / Corporate Website",
+    amount: "Starts from RM3800",
+    features: [
+      "Up to 10 structured pages",
+      "Profile, services, forms",
+      "1 year domain & hosting",
+      "1 year technical maintenance",
+      "Full design & copywriting",
+      "SEO-ready structure",
+      "Branding-consistent visuals",
+    ],
+    contactHref: `https://api.whatsapp.com/send/?phone=${about.contact.phone}&text=Hi%20Ezlan,%20I%20want%20a%20Corporate%20Website`,
+  },
+];
 
 export const projects: Project[] = [
   {

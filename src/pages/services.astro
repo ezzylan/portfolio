@@ -1,0 +1,91 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { meta, services, pricings, about } from "../consts.ts";
+import { Check, Mail } from "@lucide/astro";
+import WhatsApp from "../assets/whatsapp.svg";
+---
+
+<Layout title={meta.services.title} description={meta.services.description}>
+	<section class="space-y-2">
+		<h2>
+			<span class="fancy-highlight">My Services</span>
+		</h2>
+		<div class="grid grid-cols-1 gap-6 mt-6 sm:grid-cols-2">
+			{
+				services.map((service) => (
+					<div class="shadow-sm card bg-primary">
+						<div class="card-body">
+							<h2 class="card-title">{service.title}</h2>
+							<p>{service.description}</p>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="mt-10 space-y-2">
+		<h2>
+			<span class="fancy-highlight">My Pricing</span>
+		</h2>
+		<p class="text-base-content/80">
+			Choose the package that fits your business needs. All packages
+			include domain, hosting, and full technical maintenance for 1 year.
+		</p>
+		<div class="grid grid-cols-1 gap-6 mt-6 sm:grid-cols-2">
+			{
+				pricings.map((pricing) => (
+					<div class="shadow-sm card bg-primary">
+						<div class="card-body">
+							<h2>{pricing.title}</h2>
+							<span class="text-xl">{pricing.amount}</span>
+							<ul class="mt-6 space-y-2 text-xs">
+								{pricing.features.map((feature) => (
+									<li>
+										<Check class="inline-block text-success me-2 size-4" />
+										<span>{feature}</span>
+									</li>
+								))}
+							</ul>
+							<div class="mt-6">
+								<a
+									role="button"
+									class="btn btn-warning btn-block"
+									href={pricing.contactHref}
+									target="_blank"
+								>
+									Contact to Start
+								</a>
+							</div>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="mt-10 space-y-2">
+		<h2>
+			<span class="fancy-highlight"
+				>Let's Build Something Beautiful & Functional</span
+			>
+		</h2>
+		<p class="text-base-content/80">
+			Whether it's a corporate website or a focused landing page — I can
+			help you plan, design, and launch it properly.
+		</p>
+		<div class="flex gap-2">
+			<a
+				class="flex-1 btn btn-soft btn-success"
+				href=`https://wasap.my/${about.contact.phone}`
+				target="_blank"
+				>WhatsApp Me<WhatsApp width={16} fill="currentColor" />
+			</a>
+			<a
+				class="flex-1 btn btn-soft btn-warning"
+				href=`mailto:${about.contact.email}`
+				target="_blank">Email Me<Mail size="1rem" /></a
+			>
+		</div>
+	</section>
+</Layout>

@@ -9,6 +9,11 @@ export interface Footer {
   content: string;
 }
 
+export interface NavItem {
+  href: string;
+  label: string;
+}
+
 interface IconLink {
   icon: keyof typeof icons;
   href: string;
@@ -37,7 +42,22 @@ export interface About {
   resumeHref: string;
   workExperience: WorkExperience[];
   education: Education[];
-  getInTouch: string;
+  contact: {
+    phone: string;
+    email: string;
+  };
+}
+
+export interface Service {
+  title: string;
+  description: string;
+}
+
+export interface Pricing {
+  title: string;
+  amount: string;
+  features: string[];
+  contactHref: string;
 }
 
 export interface Project {

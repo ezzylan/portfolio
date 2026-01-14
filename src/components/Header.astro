@@ -1,9 +1,12 @@
 ---
+import { ChevronDown } from "@lucide/astro";
 import { about, header } from "../consts.ts";
+import type { NavItem } from "../types";
 import LucideIcon from "./LucideIcon.astro";
 
-const navItems = [
+const navItems: NavItem[] = [
 	{ href: "/", label: "Home" },
+	{ href: "/services", label: "Services" },
 	{ href: "/resume", label: "Resume" },
 	{ href: "/projects", label: "Projects" },
 ];
@@ -13,12 +16,51 @@ const subpath = pathname.match(/[^\/]+/g);
 ---
 
 <header
-	class="bg-base-300/30 sticky top-0 z-10 flex justify-center p-4 backdrop-blur-md"
+	class="sticky top-0 z-10 flex justify-center p-4 bg-base-300/30 backdrop-blur-md"
 >
 	<div class="container flex items-center justify-between">
-		<h2 class="hidden sm:block"><a href="/">{header.logoTitle}</a></h2>
+		<h2 class="w-36"><a href="/">{header.logoTitle}</a></h2>
 
-		<nav class="flex gap-4">
+		<div class="dropdown dropdown-end sm:hidden">
+			<div
+				tabindex="0"
+				role="button"
+				class="btn btn-soft btn-accent rounded-field"
+			>
+				{
+					navItems.find(
+						(item) =>
+							item.href === pathname ||
+							item.href === "/" + (subpath?.[0] || "")
+					)?.label
+				}
+				<ChevronDown size="1rem" />
+			</div>
+			<ul
+				tabindex="-1"
+				class="p-2 mt-4 shadow-sm menu dropdown-content bg-base-200 rounded-box z-1 w-28"
+			>
+				{
+					navItems.map((item) => {
+						const isActive =
+							item.href === pathname ||
+							item.href === "/" + (subpath?.[0] || "");
+
+						return (
+							<a
+								href={item.href}
+								role="button"
+								class={`btn font-medium ${isActive ? "btn-accent" : "btn-ghost"}`}
+							>
+								{item.label}
+							</a>
+						);
+					})
+				}
+			</ul>
+		</div>
+
+		<nav class="hidden sm:flex sm:gap-4">
 			{
 				navItems.map((item) => {
 					const isActive =
@@ -37,7 +79,7 @@ const subpath = pathname.match(/[^\/]+/g);
 			}
 		</nav>
 
-		<div class="flex gap-2">
+		<div class="hidden sm:flex sm:gap-2">
 			{
 				about.links.map((link) => (
 					<a
@@ -45,6 +87,7 @@ const subpath = pathname.match(/[^\/]+/g);
 						target="_blank"
 						class="btn btn-soft btn-circle btn-accent"
 						title={link.icon}
+						aria-label={link.icon}
 					>
 						<LucideIcon name={link.icon} />
 					</a>
