@@ -2,14 +2,15 @@
 
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import { defineConfig } from "astro/config";
+import vue from "@astrojs/vue";
 import tailwindcss from "@tailwindcss/vite";
+import { defineConfig } from "astro/config";
 import { SITE_URL } from "./src/consts.ts";
 
 // https://astro.build/config
 export default defineConfig({
   site: SITE_URL,
-  integrations: [mdx(), sitemap()],
+  integrations: [mdx(), sitemap(), vue()],
   vite: {
     plugins: [tailwindcss()],
   },

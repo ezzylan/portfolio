@@ -10,18 +10,22 @@
   },
   "dependencies": {
     "@astrojs/mdx": "4.3.13",
-    "@astrojs/rss": "4.0.14",
-    "@astrojs/sitemap": "3.6.1",
+    "@astrojs/rss": "4.0.15",
+    "@astrojs/sitemap": "3.7.0",
+    "@astrojs/vue": "^5.1.4",
     "@lucide/astro": "^0.562.0",
     "@tailwindcss/vite": "^4.1.18",
-    "astro": "5.16.9",
+    "astro": "5.16.11",
     "daisyui": "^5.5.14",
+    "lucide-vue-next": "^0.562.0",
     "sharp": "^0.34.5",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3",
+    "vue": "^3.5.26"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",
-    "prettier": "^3.7.4",
+    "prettier": "^3.8.0",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2"
   }

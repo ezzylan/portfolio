@@ -215,6 +215,7 @@ export const projects: Project[] = [
     description: "A simple web-based Islamic prayer tracker built with Nuxt.",
     sourceHref: "https://github.com/ezzylan/prayer-tracker",
     liveHref: "https://prayez.netlify.app/",
+    type: "side",
   },
   {
     title: "Pick A Strip",
@@ -223,6 +224,7 @@ export const projects: Project[] = [
       "A simple way to let friends pick a random strip and make spontaneous decisions, built as a React SPA.",
     sourceHref: "https://github.com/ezzylan/pick-a-strip",
     liveHref: "https://pickastrip.netlify.app/",
+    type: "side",
   },
   {
     title: "ZassPrint Thesis Order",
@@ -231,6 +233,13 @@ export const projects: Project[] = [
       "A Nuxt app for ZassPrint to keep track of customer thesis hard/soft bound orders.",
     sourceHref: "https://github.com/ezzylan/zassprint-thesis-order",
     liveHref: "https://zassprint-thesis-order.netlify.app/",
+    type: "client",
+    testimonial: {
+      name: "Sharifah Nurashikin Wafa",
+      position: "COO @ Zass Innovation Group",
+      quote:
+        "Solusi sistem yang komprehensif dan mudah digunakan oleh pelanggan dan pekerja. Dari order sampai delivery dalam satu platform ✨",
+    },
   },
   {
     title: "GrantHub",
@@ -238,6 +247,13 @@ export const projects: Project[] = [
     description:
       "A Nuxt app that serves as a one-stop center for accessing grant information in Malaysia and facilitates multi-sector collaboration by enabling users from academia, industry, and the community to find and connect with potential partners for research and innovation projects.",
     sourceHref: "https://github.com/ezzylan/grant-hub",
+    type: "client",
+    testimonial: {
+      name: "Dr Nur Nasuha Mohd Daud",
+      position: "Senior Lecturer @ Universiti Malaya",
+      quote:
+        "Ezlan was involved in developing our Grant Management System as the main developer and consistently exceeded the project lead's expectations. Despite working within a strict timeline, he was able to translate the system vision into a functional and usable system with minimal guidance, demonstrating strong experience in delivering solutions that meet user needs.",
+    },
   },
   {
     title: "ZassPrint KPS",
@@ -245,6 +261,7 @@ export const projects: Project[] = [
     description:
       "A SvelteKit app for ZassPrint to handle customer file uploads to their shop in KPS UM, and keep track of customer thesis hard/softbound orders.",
     sourceHref: "https://github.com/ezzylan/zassprint-kps",
+    type: "side",
   },
   {
     title: "MadaniBlog",
@@ -252,6 +269,7 @@ export const projects: Project[] = [
     description:
       "A political analysis blog, built with Django, aiming to help Malaysian netizens keep up to date with current politics without being exposed to biased news.",
     sourceHref: "https://github.com/ezzylan/MadaniBlog",
+    type: "side",
   },
   {
     title: "Restaurant Online Ordering and Management System",
@@ -259,6 +277,7 @@ export const projects: Project[] = [
     description:
       "A Laravel app, developed as a Final Year Project for my Bachelor's Degree, to solve the problems of the manual ordering system by transforming the manual process of ordering system in a restaurant between the customer and staff and modernising and automating all processes.",
     sourceHref: "https://github.com/AfiqAmmar/Restaurant-Online-Order",
+    type: "side",
   },
 ];
 

@@ -60,6 +60,14 @@ export interface Pricing {
   contactHref: string;
 }
 
+export type ProjectType = "client" | "side";
+
+export interface Testimonial {
+  name: string;
+  position: string;
+  quote: string;
+}
+
 export interface Project {
   logoImage?: ImageMetadata;
   title: string;
@@ -67,4 +75,6 @@ export interface Project {
   description: string;
   sourceHref?: string;
   liveHref?: string;
+  type: ProjectType;
+  testimonial?: Testimonial;
 }
